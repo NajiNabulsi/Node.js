@@ -3,13 +3,11 @@ const express = require('express');
 
 const app = express();
 
-const url1 = 'https://reservation100-sandbox.mxapps.io/rest-doc/api/swagger.json';
-const url = 'https://reservation100-sandbox.mxapps.io/rest-doc/api#/reservations/post_reservations';
+const url = ' https://reservation100-sandbox.mxapps.io/api/reservations';
 
-// https://reservation100-sandbox.mxapps.io/rest-doc/api#/reservations/post_reservations
 app.get('/', (req, res) => {
 
-    fetch(url1, { headers: { 'Content-Type': 'application/json' } })
+    fetch(url, { headers: { 'Content-Type': 'application/json' } })
         .then(data => data.json())
         .then(json => {
             console.log(json);
