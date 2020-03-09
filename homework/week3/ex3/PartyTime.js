@@ -3,12 +3,12 @@ const express = require('express');
 
 const app = express();
 
-const url = ' https://reservation100-sandbox.mxapps.io/api/reservations';
+const url = 'https://reservation100-sandbox.mxapps.io/rest-doc/api#/reservations/post_reservations';
 
 app.get('/', (req, res) => {
 
     fetch(url, { headers: { 'Content-Type': 'application/json' } })
-        .then(data => data.json())
+        .then(data => data.text())
         .then(json => {
             console.log(json);
             res.end(`<h1>The reservation for the biggest party  ... check your console</h1>`);
